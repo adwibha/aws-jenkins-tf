@@ -1,0 +1,12 @@
+pipeline {
+    agent {
+        docker { image 'nginx:1.27.3-alpine-slim' }
+        stages {
+            stage ('Test') {
+                steps {
+                    sh 'nginx -v'
+                }
+            }
+        }
+    }
+}
